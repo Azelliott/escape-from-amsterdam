@@ -1,3 +1,50 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+
+import random
+import os
+import time
+
+
+def clr_scr():
+    # Check if operating system is Linux or Mac
+    if os.name == 'posix':
+        _ = os.system('clear')
+    else:
+        # Else operating system is Windows (os.name = nt)
+        _ = os.system('cls')
+
+
+def splash_start():
+    print('''
+      ______                             __                     
+     |  ____|                           / _|                    
+     | |__   ___  ___ __ _ _ __   ___  | |_ _ __ ___  _ __ ___  
+     |  __| / __|/ __/ _` | '_ \ / _ \ |  _| '__/ _ \| '_ ` _ \ 
+     | |____\__ \ (_| (_| | |_) |  __/ | | | | | (_) | | | | | |
+     |______|___/\___\__,_| .__/ \___| |_| |_|  \___/|_| |_| |_|
+         /\               | | |             | |                 
+        /  \   _ __ ___  _|_| |_ ___ _ __ __| | __ _ _ __ ___   
+       / /\ \ | '_ ` _ \/ __| __/ _ \ '__/ _` |/ _` | '_ ` _ \  
+      / ____ \| | | | | \__ \ ||  __/ | | (_| | (_| | | | | | | 
+     /_/    \_\_| |_| |_|___/\__\___|_|  \__,_|\__,_|_| |_| |_|                                                             
+    ''')
+
+
+def splash_end():
+    print('''
+      ______           _          __           
+     |  ____|         | |        / _|          
+     | |__   _ __   __| |   ___ | |_           
+     |  __| | '_ \ / _` |  / _ \|  _|          
+     | |____| | | | (_| | | (_) | |            
+     |______|_| |_|\__,_|  \___/|_|         __ 
+          | |               | |            /_ |
+       ___| |__   __ _ _ __ | |_ ___ _ __   | |
+      / __| '_ \ / _` | '_ \| __/ _ \ '__|  | |
+     | (__| | | | (_| | |_) | ||  __/ |     | |
+      \___|_| |_|\__,_| .__/ \__\___|_|     |_|
+                      | |                      
+                      |_|                      
+    ''')
+
+splash_start()
