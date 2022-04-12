@@ -2,7 +2,7 @@ import random
 import os
 import time
 
-items = ["Door", "Mirror", "Crystal vase","Painting","Baloons", "Desk",  "Phone",
+items = ["Door", "Mirror", "Crystal vase","Painting","Baloons", "Desk", "Phone",
           "Bookcase", "Champagne bottle",  "Shoes"]
 
 result = []
@@ -100,7 +100,7 @@ def intro():
     time.sleep(3)
     print("\nYou get up and after looking around identify several interesting items\n")
 
-
+# def door
 # def mirror()
 # def crystal_vase()
 # def painting()
@@ -112,4 +112,4 @@ def intro():
 # def shoes()
 
 
-door()
+
