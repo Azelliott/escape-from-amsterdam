@@ -100,7 +100,40 @@ def intro():
     time.sleep(3)
     print("\nYou get up and after looking around identify several interesting items\n")
 
-# def door
+
+def door(code):
+    print("Next to the door is a big digitall access keypad. On it, the terminal cursor is blinking waiting for you to ener the code.")
+    print("You start typing...\n")
+    while True:
+        inputDigit1 = input("Enter first digit: ")
+        if (len(inputDigit1) == 1) and (inputDigit1.isnumeric()):
+            break
+        print("INPUT ERROR! Only numbers 0-9 are allowed")
+
+    while True:
+        inputDigit2 = input("Enter second digit: ")
+        if (len(inputDigit2) == 1) and (inputDigit2.isnumeric()):
+            break
+        print("INPUT ERROR! Enter number 0-9")
+
+    while True:
+        inputDigit3 = input("Enter third digit: ")
+        if (len(inputDigit3) == 1) and (inputDigit3.isnumeric()):
+            break
+        print("INPUT ERROR! Enter number 0-9")
+
+    enteredCode = int(str(inputDigit1) + str(inputDigit2) + str(inputDigit3))
+
+    if enteredCode == code:
+        time.sleep(1)
+        clr_scr()
+        print("Terminal digits turn green, and with a loud beep you hear the heavy door unlock. You carfully open the door and peek through the dimly lit hallway.")
+        splash_end()
+        return (1)
+    else:
+        print("Terminal digits start flashing red, giving annoyng tone of failure. INCORRECT CODE! ")
+        return(0)
+
 # def mirror()
 # def crystal_vase()
 # def painting()
@@ -111,5 +144,28 @@ def intro():
 # def champagne_bottle()
 # def shoes()
 
+def main_menu(list, question):
+    for item in list:
+        print(list.index(item), item)
 
+    while True:
+        result = input(question)
+        try:
+            result = int(result)
+            break
+        except:
+            print("Please enter a number between 0-9:")
+
+    return result
+
+
+while True:
+    usr_choice = main_menu(items, "\nWhat do you want to investigate?\n> ")
+
+    if usr_choice == 1:
+        mirror(usr_choice, code_loc_1, code_pt_1)
+    else:
+        result = door(code)
+    if result == 1:
+        break
 
