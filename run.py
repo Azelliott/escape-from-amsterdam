@@ -1,12 +1,11 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import random
 import os
 import time
 
 
-
 def clr_scr():
+    """Clear screen helper"""
+
     # Check if operating system is Linux or Mac
     if os.name == 'posix':
         _ = os.system('clear')
@@ -49,6 +48,8 @@ def splash_end():
     ''')
 
 def intro():
+    """ Game intro """
+
     splash_start()
     name = str(input("Enter your name:\n> "))
     clr_scr()
@@ -82,5 +83,6 @@ def intro():
     print("            Miss V")
     time.sleep(3)
     print("\nYou get up and after looking around identify several interesting items\n")
+
 
 intro()
