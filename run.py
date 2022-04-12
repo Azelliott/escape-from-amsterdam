@@ -2,6 +2,22 @@ import random
 import os
 import time
 
+items = ["Door", "Mirror", "Crystal vase","Painting","Baloons", "Desk",  "Phone",
+          "Bookcase", "Champagne bottle",  "Shoes"]
+
+result = []
+
+# Randomize each number from three digit code
+code_pt_1 = random.randint(0, 9)
+code_pt_2 = random.randint(0, 9)
+code_pt_3 = random.randint(0, 9)
+
+# Randomize code location and make sure they don't overlap
+code_loc_1 = random.randint(1, 3)
+code_loc_2 = random.randint(4, 6)
+code_loc_3 = random.randint(7, 9)
+
+code = int(str(code_pt_1) + str(code_pt_2) + str(code_pt_3))
 
 def clr_scr():
     """Clear screen helper"""
@@ -85,4 +101,15 @@ def intro():
     print("\nYou get up and after looking around identify several interesting items\n")
 
 
-intro()
+# def mirror()
+# def crystal_vase()
+# def painting()
+# def baloons()
+# def desk()
+# def phone()
+# def bookcase()
+# def champagne_bottle()
+# def shoes()
+
+
+door()
