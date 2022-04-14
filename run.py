@@ -19,6 +19,7 @@ code_loc_3 = random.randint(7, 9)
 
 code = int(str(code_pt_1) + str(code_pt_2) + str(code_pt_3))
 
+
 def clr_scr():
     """Clear screen helper"""
 
@@ -62,6 +63,7 @@ def splash_end():
                       | |                      
                       |_|                      
     ''')
+
 
 def intro():
     """ Game intro """
@@ -134,8 +136,25 @@ def door(code):
         print("Terminal digits start flashing red, giving annoyng tone of failure. INCORRECT CODE! ")
         return(0)
 
-# def mirror()
-# def crystal_vase()
+
+def mirror(usr_choice, code_loc, code_val):
+    print("You approach a big mirror and take a good look at yourself.\n '...Man I look like s*it'")
+    if usr_choice == code_loc:
+        print("As you are about to turn away, you notice that you are wearing unfamiliar t-shirt with a number " +
+              str(code_val) + " on it.\n")
+    else:
+        print("There's no code here, you turn around.\n")
+
+
+def crystal_vase(usr_choice, code_loc, code_val):
+    print("You approach expensive looking crystal vase")
+    if usr_choice == code_loc:
+        print("There is gold plated insignia 'Liberia' and a number " +
+              str(code_val) + " above it.\n")
+    else:
+        print("'I better not touch this too much or I might brake it.' You move away.\n")
+
+
 # def painting()
 # def baloons()
 # def desk()
@@ -143,6 +162,7 @@ def door(code):
 # def bookcase()
 # def champagne_bottle()
 # def shoes()
+
 
 def main_menu(list, question):
     for item in list:
@@ -164,6 +184,8 @@ while True:
 
     if usr_choice == 1:
         mirror(usr_choice, code_loc_1, code_pt_1)
+    elif usr_choice == 2:
+        crystal_vase(usr_choice, code_loc_1, code_pt_1)
     else:
         result = door(code)
     if result == 1:
