@@ -178,8 +178,25 @@ def desk(usr_choice, code_loc, code_val):
     else:
         print("You looked everywhere but you couldn't find the code.\n")
 
-# def phone()
-# def bookcase()
+
+def phone(usr_choice, code_loc, code_val):
+    print("There is a vintage rotary phone next to the Door")
+    if usr_choice == code_loc:
+        print("As you come closer you realize that every number on the dial is number " +
+              str(code_val) + ".\n")
+    else:
+        print("You pick up the phone but there was no sound. 'It was kinda expected, but still...gave me a bit of hope'\n")
+
+
+def bookcase(usr_choice, code_loc, code_val):
+    print("Luxurious looking bookcase with brass details.")
+    if usr_choice == code_loc:
+        print("You start reading the titles and sifting through the books hoping to find the clue.")
+        print("Suddenly small note falls out of one of them. On it says: 'seek and ye shall find' and a number " +
+              str(code_val) + " below it.\n")
+    else:
+        print("You couldn't find any code.\n")
+
 # def champagne_bottle()
 # def shoes()
 
@@ -212,6 +229,10 @@ while True:
         baloons(usr_choice, code_loc_1, code_pt_1)
     elif usr_choice == 5:
         desk(usr_choice, code_loc_1, code_pt_1)
+    elif usr_choice == 6:
+        phone(usr_choice, code_loc_2, code_pt_2)
+    elif usr_choice == 7:
+        bookcase(usr_choice, code_loc_2, code_pt_2)
     else:
         result = door(code)
     if result == 1:
