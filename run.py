@@ -1,10 +1,9 @@
 import random
+import time  # for sleep function
 import os
-import time
 
-items = ["Door", "Mirror", "Crystal vase","Painting","Baloons", "Desk", "Phone",
+items = ["Door", "Mirror", "Crystal vase","Painting","Baloons", "Desk",  "Phone",
           "Bookcase", "Champagne bottle",  "Shoes"]
-
 result = []
 
 # Randomize each number from three digit code
@@ -21,8 +20,6 @@ code = int(str(code_pt_1) + str(code_pt_2) + str(code_pt_3))
 
 
 def clr_scr():
-    """Clear screen helper"""
-
     # Check if operating system is Linux or Mac
     if os.name == 'posix':
         _ = os.system('clear')
@@ -66,8 +63,6 @@ def splash_end():
 
 
 def intro():
-    """ Game intro """
-
     splash_start()
     name = str(input("Enter your name:\n> "))
     clr_scr()
@@ -103,40 +98,6 @@ def intro():
     print("\nYou get up and after looking around identify several interesting items\n")
 
 
-def door(code):
-    print("Next to the door is a big digitall access keypad. On it, the terminal cursor is blinking waiting for you to ener the code.")
-    print("You start typing...\n")
-    while True:
-        inputDigit1 = input("Enter first digit: ")
-        if (len(inputDigit1) == 1) and (inputDigit1.isnumeric()):
-            break
-        print("INPUT ERROR! Only numbers 0-9 are allowed")
-
-    while True:
-        inputDigit2 = input("Enter second digit: ")
-        if (len(inputDigit2) == 1) and (inputDigit2.isnumeric()):
-            break
-        print("INPUT ERROR! Enter number 0-9")
-
-    while True:
-        inputDigit3 = input("Enter third digit: ")
-        if (len(inputDigit3) == 1) and (inputDigit3.isnumeric()):
-            break
-        print("INPUT ERROR! Enter number 0-9")
-
-    enteredCode = int(str(inputDigit1) + str(inputDigit2) + str(inputDigit3))
-
-    if enteredCode == code:
-        time.sleep(1)
-        clr_scr()
-        print("Terminal digits turn green, and with a loud beep you hear the heavy door unlock. You carfully open the door and peek through the dimly lit hallway.")
-        splash_end()
-        return (1)
-    else:
-        print("Terminal digits start flashing red, giving annoyng tone of failure. INCORRECT CODE! ")
-        return(0)
-
-
 def mirror(usr_choice, code_loc, code_val):
     print("You approach a big mirror and take a good look at yourself.\n '...Man I look like s*it'")
     if usr_choice == code_loc:
@@ -153,6 +114,7 @@ def crystal_vase(usr_choice, code_loc, code_val):
               str(code_val) + " above it.\n")
     else:
         print("'I better not touch this too much or I might brake it.' You move away.\n")
+
 
 def painting(usr_choice, code_loc, code_val):
     print("You come closer to the big work of art on the wall. Looks old")
@@ -197,8 +159,57 @@ def bookcase(usr_choice, code_loc, code_val):
     else:
         print("You couldn't find any code.\n")
 
-# def champagne_bottle()
-# def shoes()
+
+def champagne_bottle(usr_choice, code_loc, code_val):
+    print("A pretty big champagne bottle.")
+    if usr_choice == code_loc:
+        print("You see " +
+              str(code_val) + " marbles inside. How did they get in there.\n")
+    else:
+        print("'Never again'. You thought to yourself...again. No code or alcohol here\n")
+
+
+def shoes(usr_choice, code_loc, code_val):
+    print("There is several shoes in the hallway, none of them is yours.")
+    if usr_choice == code_loc:
+        print("You realize that all " + str(code_val) +
+              " of them are left.\n")
+    else:
+        print("No code here. 'Don't know what did I expect to find.'\n")
+
+
+def door(code):
+    print("Next to the door is a big digitall access keypad. On it, the terminal cursor is blinking waiting for you to ener the code.")
+    print("You start typing...\n")
+    while True:
+        inputDigit1 = input("Enter first digit: ")
+        if (len(inputDigit1) == 1) and (inputDigit1.isnumeric()):
+            break
+        print("INPUT ERROR! Only numbers 0-9 are allowed")
+
+    while True:
+        inputDigit2 = input("Enter second digit: ")
+        if (len(inputDigit2) == 1) and (inputDigit2.isnumeric()):
+            break
+        print("INPUT ERROR! Enter number 0-9")
+
+    while True:
+        inputDigit3 = input("Enter third digit: ")
+        if (len(inputDigit3) == 1) and (inputDigit3.isnumeric()):
+            break
+        print("INPUT ERROR! Enter number 0-9")
+
+    enteredCode = int(str(inputDigit1) + str(inputDigit2) + str(inputDigit3))
+
+    if enteredCode == code:
+        time.sleep(1)
+        clr_scr()
+        print("Terminal digits turn green, and with a loud beep you hear the heavy door unlock. You carfully open the door and peek through the dimly lit hallway.")
+        splash_end()
+        return (1)
+    else:
+        print("Terminal digits start flashing red, giving annoyng tone of failure. INCORRECT CODE! ")
+        return(0)
 
 
 def main_menu(list, question):
@@ -216,25 +227,29 @@ def main_menu(list, question):
     return result
 
 
+# intro()
 while True:
     usr_choice = main_menu(items, "\nWhat do you want to investigate?\n> ")
 
     if usr_choice == 1:
-        mirror(usr_choice, code_loc_1, code_pt_1)
-    elif usr_choice == 2:
-        crystal_vase(usr_choice, code_loc_1, code_pt_1)
-    elif usr_choice == 3:
-        painting(usr_choice, code_loc_2, code_pt_2)
-    elif usr_choice == 4:
         baloons(usr_choice, code_loc_1, code_pt_1)
-    elif usr_choice == 5:
+    elif usr_choice == 2:
         desk(usr_choice, code_loc_1, code_pt_1)
-    elif usr_choice == 6:
+    elif usr_choice == 3:
+        crystal_vase(usr_choice, code_loc_1, code_pt_1)
+    elif usr_choice == 4:
         phone(usr_choice, code_loc_2, code_pt_2)
-    elif usr_choice == 7:
+    elif usr_choice == 5:
+        painting(usr_choice, code_loc_2, code_pt_2)
+    elif usr_choice == 6:
         bookcase(usr_choice, code_loc_2, code_pt_2)
+    elif usr_choice == 7:
+        champagne_bottle(usr_choice, code_loc_3, code_pt_3)
+    elif usr_choice == 8:
+        mirror(usr_choice, code_loc_3, code_pt_3)
+    elif usr_choice == 9:
+        shoes(usr_choice, code_loc_3, code_pt_3)
     else:
         result = door(code)
     if result == 1:
         break
-
