@@ -16,8 +16,8 @@ code_loc_1 = random.randint(1, 3)
 code_loc_2 = random.randint(4, 6)
 code_loc_3 = random.randint(7, 9)
 
+# Concatonate random digits to final code
 code = int(str(code_pt_1) + str(code_pt_2) + str(code_pt_3))
-
 
 def clr_scr():
     # Check if operating system is Linux or Mac
@@ -226,8 +226,8 @@ def main_menu(list, question):
 
     return result
 
-
-# intro()
+# Game loop start
+intro()
 while True:
     usr_choice = main_menu(items, "\nWhat do you want to investigate?\n> ")
 
