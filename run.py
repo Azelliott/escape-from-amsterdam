@@ -6,18 +6,16 @@ items = ["Door", "Mirror", "Crystal vase","Painting","Baloons", "Desk",  "Phone"
           "Bookcase", "Champagne bottle",  "Shoes"]
 result = []
 
-# Randomize each number from three digit code
-code_pt_1 = random.randint(0, 9)
-code_pt_2 = random.randint(0, 9)
-code_pt_3 = random.randint(0, 9)
-
 # Randomize code location and make sure they don't overlap
 code_loc_1 = random.randint(1, 3)
 code_loc_2 = random.randint(4, 6)
 code_loc_3 = random.randint(7, 9)
 
-# Concatonate random digits to final code
-code = int(str(code_pt_1) + str(code_pt_2) + str(code_pt_3))
+#Create a list of 3 random numbers in the range 0-9
+random_code = [random.randint(0, 9) for i in range(3)]
+
+#Create a 3 digit code from the random list
+full_code = int(str(random_code[0]) + str(random_code[1]) + str(random_code[2]))
 
 def clr_scr():
     # Check if operating system is Linux or Mac
@@ -178,7 +176,7 @@ def shoes(usr_choice, code_loc, code_val):
         print("No code here. 'Don't know what did I expect to find.'\n")
 
 
-def door(code):
+def door(full_code):
     print("Next to the door is a big digitall access keypad. On it, the terminal cursor is blinking waiting for you to ener the code.")
     print("You start typing...\n")
     while True:
@@ -201,14 +199,14 @@ def door(code):
 
     enteredCode = int(str(inputDigit1) + str(inputDigit2) + str(inputDigit3))
 
-    if enteredCode == code:
+    if enteredCode == full_code:
         time.sleep(1)
         clr_scr()
         print("Terminal digits turn green, and with a loud beep you hear the heavy door unlock. You carfully open the door and peek through the dimly lit hallway.")
         splash_end()
         return (1)
     else:
-        print("Terminal digits start flashing red, giving annoyng tone of failure. INCORRECT CODE! ")
+        print("Terminal digits start flashing red, giving annoyng tone of failure. INCORRECT CODE!\n")
         return(0)
 
 
@@ -226,30 +224,30 @@ def main_menu(list, question):
 
     return result
 
-# Game loop start
-intro()
+
+# intro()
 while True:
     usr_choice = main_menu(items, "\nWhat do you want to investigate?\n> ")
 
     if usr_choice == 1:
-        baloons(usr_choice, code_loc_1, code_pt_1)
+        baloons(usr_choice, code_loc_1, random_code[0])
     elif usr_choice == 2:
-        desk(usr_choice, code_loc_1, code_pt_1)
+        desk(usr_choice, code_loc_1, random_code[0])
     elif usr_choice == 3:
-        crystal_vase(usr_choice, code_loc_1, code_pt_1)
+        crystal_vase(usr_choice, code_loc_1, random_code[0])
     elif usr_choice == 4:
-        phone(usr_choice, code_loc_2, code_pt_2)
+        phone(usr_choice, code_loc_2, random_code[1])
     elif usr_choice == 5:
-        painting(usr_choice, code_loc_2, code_pt_2)
+        painting(usr_choice, code_loc_2, random_code[1])
     elif usr_choice == 6:
-        bookcase(usr_choice, code_loc_2, code_pt_2)
+        bookcase(usr_choice, code_loc_2, random_code[1])
     elif usr_choice == 7:
-        champagne_bottle(usr_choice, code_loc_3, code_pt_3)
+        champagne_bottle(usr_choice, code_loc_3, random_code[2])
     elif usr_choice == 8:
-        mirror(usr_choice, code_loc_3, code_pt_3)
+        mirror(usr_choice, code_loc_3, random_code[2])
     elif usr_choice == 9:
-        shoes(usr_choice, code_loc_3, code_pt_3)
+        shoes(usr_choice, code_loc_3, random_code[2])
     else:
-        result = door(code)
+        result = door(full_code)
     if result == 1:
         break
