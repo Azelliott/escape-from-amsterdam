@@ -32,29 +32,30 @@ def main_menu(list, question):
     return result
 
 
-intro()
+#intro()
 while True:
     usr_choice = main_menu(items, "\nWhat do you want to investigate?\n> ")
-
-    if usr_choice == 1:
-        baloons(usr_choice, code_loc_1, random_code[0])
-    elif usr_choice == 2:
-        desk(usr_choice, code_loc_1, random_code[0])
-    elif usr_choice == 3:
-        crystal_vase(usr_choice, code_loc_1, random_code[0])
-    elif usr_choice == 4:
-        phone(usr_choice, code_loc_2, random_code[1])
-    elif usr_choice == 5:
-        painting(usr_choice, code_loc_2, random_code[1])
-    elif usr_choice == 6:
-        bookcase(usr_choice, code_loc_2, random_code[1])
-    elif usr_choice == 7:
-        champagne_bottle(usr_choice, code_loc_3, random_code[2])
-    elif usr_choice == 8:
-        mirror(usr_choice, code_loc_3, random_code[2])
-    elif usr_choice == 9:
-        shoes(usr_choice, code_loc_3, random_code[2])
-    else:
-        result = door(full_code)
+    clr_scr()
+    match usr_choice:
+       case 1:
+          baloons(usr_choice, code_loc_1, random_code[0])
+       case 2:
+          desk(usr_choice, code_loc_1, random_code[0])
+       case 3:
+          crystal_vase(usr_choice, code_loc_1, random_code[0])
+       case 4:
+          phone(usr_choice, code_loc_2, random_code[1])
+       case 5:
+          painting(usr_choice, code_loc_2, random_code[1])
+       case 6:
+          bookcase(usr_choice, code_loc_2, random_code[1])
+       case 7:
+          champagne_bottle(usr_choice, code_loc_3, random_code[2])
+       case 8:
+          mirror(usr_choice, code_loc_3, random_code[2]) 
+       case 9:
+          shoes(usr_choice, code_loc_3, random_code[2])
+       case _:
+          result = door(full_code)
     if result == 1:
         break
