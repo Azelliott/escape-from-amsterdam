@@ -32,7 +32,7 @@ def main_menu(list, question):
     return result
 
 
-# intro()
+intro()
 while True:
     usr_choice = main_menu(items, "\nWhat do you want to investigate?\n> ")
 

@@ -1,6 +1,7 @@
 import time
 import os
 
+
 def clr_scr():
     # Check if operating system is Linux or Mac
     if os.name == 'posix':
