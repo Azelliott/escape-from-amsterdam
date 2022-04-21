@@ -83,83 +83,65 @@ def intro():
 
 def mirror(usr_choice, code_loc, code_val):
     print("You approach a big mirror and take a good look at yourself.\n '...Man I look like s*it'")
-    if usr_choice == code_loc:
-        print("As you are about to turn away, you notice that you are wearing unfamiliar t-shirt with a number " +
-              str(code_val) + " on it.\n")
-    else:
-        print("There's no code here, you turn around.\n")
+    match usr_choice == code_loc:
+        case True: print("As you are about to turn away, you notice that you are wearing unfamiliar t-shirt with a number " + str(code_val) + " on it.\n")
+        case _: print("There's no code here, you turn around.\n")
 
 
 def crystal_vase(usr_choice, code_loc, code_val):
     print("You approach expensive looking crystal vase")
-    if usr_choice == code_loc:
-        print("There is gold plated insignia 'Liberia' and a number " +
-              str(code_val) + " above it.\n")
-    else:
-        print("'I better not touch this too much or I might brake it.' You move away.\n")
+    match usr_choice == code_loc:
+        case True: print("There is gold plated insignia 'Liberia' and a number " + str(code_val) + " above it.\n")
+        case _: print("'I better not touch this too much or I might brake it.' You move away.\n")
 
 
 def painting(usr_choice, code_loc, code_val):
     print("You come closer to the big work of art on the wall. Looks old")
-    if usr_choice == code_loc:
-        print("After admiring the painting for few moments, your glance registers something weird. Signature reads Lib-" + str(code_val) + ".")
-    else:
-        print("'I don't have time to admire fine art, need to find the codes to escape from this place.' No code found.\n")
+    match usr_choice == code_loc:
+        case True: print("After admiring the painting for few moments, your glance registers something weird. Signature reads Lib-" + str(code_val) + ".")
+        case _: print("'I don't have time to admire fine art, need to find the codes to escape from this place.' No code found.\n")
 
 
 def baloons(usr_choice, code_loc, code_val):
     print("In the corner, there is several helium filled ballons.You come closer.")
-    if usr_choice == code_loc:
-        print("Few brightly colored helium ballons, at the back, somewhat hidden is a small baloon shaped like a number " + str(code_val) + ".\n")
-    else:
-        print("'Who brought these here? I don't remember anybody had ballons yesterday...' There is no code here.\n")
+    match usr_choice == code_loc:
+        case True: print("Few brightly colored helium ballons, at the back, somewhat hidden is a small baloon shaped like a number " + str(code_val) + ".\n")
+        case _: print("'Who brought these here? I don't remember anybody had ballons yesterday...' There is no code here.\n")
 
 
 def desk(usr_choice, code_loc, code_val):
     print("You come to the big walnut work desk in the corner of the room.")
-    if usr_choice == code_loc:
-        print("After carefully going through all the things, you see a letter seal with a " +
-              str(code_val) + " on it.\n")
-    else:
-        print("You looked everywhere but you couldn't find the code.\n")
+    match usr_choice == code_loc:
+        case True: print("After carefully going through all the things, you see a letter seal with a " + str(code_val) + " on it.\n")
+        case _: print("You looked everywhere but you couldn't find the code.\n")
 
 
 def phone(usr_choice, code_loc, code_val):
     print("There is a vintage rotary phone next to the Door")
-    if usr_choice == code_loc:
-        print("As you come closer you realize that every number on the dial is number " +
-              str(code_val) + ".\n")
-    else:
-        print("You pick up the phone but there was no sound. 'It was kinda expected, but still...gave me a bit of hope'\n")
+    match usr_choice == code_loc:
+        case True: print("As you come closer you realize that every number on the dial is number " + str(code_val) + ".\n")
+        case _: print("You pick up the phone but there was no sound. 'It was kinda expected, but still...gave me a bit of hope'\n")
 
 
 def bookcase(usr_choice, code_loc, code_val):
     print("Luxurious looking bookcase with brass details.")
-    if usr_choice == code_loc:
-        print("You start reading the titles and sifting through the books hoping to find the clue.")
-        print("Suddenly small note falls out of one of them. On it says: 'seek and ye shall find' and a number " +
-              str(code_val) + " below it.\n")
-    else:
-        print("You couldn't find any code.\n")
+    match usr_choice == code_loc:
+        case True: print("You start reading the titles and sifting through the books hoping to find the clue.\nSuddenly small note falls out of one of them. On it says: 'seek and ye shall find' and a number " + str(code_val) + " below it.\n")
+        case _: print("You couldn't find any code.\n")
 
 
 def champagne_bottle(usr_choice, code_loc, code_val):
     print("A pretty big champagne bottle.")
-    if usr_choice == code_loc:
-        print("You see " +
-              str(code_val) + " marbles inside. How did they get in there.\n")
-    else:
-        print("'Never again'. You thought to yourself...again. No code or alcohol here\n")
+    match usr_choice == code_loc:
+        case True: print("You see " + str(code_val) + " marbles inside. How did they get in there.\n")
+        case _: print("'Never again'. You thought to yourself...again. No code or alcohol here\n")
 
 
 def shoes(usr_choice, code_loc, code_val):
     print("There is several shoes in the hallway, none of them is yours.")
-    if usr_choice == code_loc:
-        print("You realize that all " + str(code_val) +
-              " of them are left.\n")
-    else:
-        print("No code here. 'Don't know what did I expect to find.'\n")
-
+    match usr_choice == code_loc:
+        case True: print("You realize that all " + str(code_val) + " of them are left.\n")
+        case _: print("No code here. 'Don't know what did I expect to find.'\n")
 
 def door(full_code):
     while True:
