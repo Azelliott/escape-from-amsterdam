@@ -162,29 +162,18 @@ def shoes(usr_choice, code_loc, code_val):
 
 
 def door(full_code):
-    print("Next to the door is a big digitall access keypad. On it, the terminal cursor is blinking waiting for you to ener the code.")
-    print("You start typing...\n")
     while True:
         inputDigit1 = input("Enter first digit: ")
-        if (len(inputDigit1) == 1) and (inputDigit1.isnumeric()):
-            break
-        print("INPUT ERROR! Only numbers 0-9 are allowed")
-
-    while True:
         inputDigit2 = input("Enter second digit: ")
-        if (len(inputDigit2) == 1) and (inputDigit2.isnumeric()):
-            break
-        print("INPUT ERROR! Enter number 0-9")
-
-    while True:
         inputDigit3 = input("Enter third digit: ")
-        if (len(inputDigit3) == 1) and (inputDigit3.isnumeric()):
+
+        enteredCode = str(inputDigit1) + str(inputDigit2) + str(inputDigit3)
+
+        if (len(enteredCode) == 3) and (enteredCode.isnumeric()):
             break
-        print("INPUT ERROR! Enter number 0-9")
+        print("INPUT ERROR! Only numbers 0-9")
 
-    enteredCode = int(str(inputDigit1) + str(inputDigit2) + str(inputDigit3))
-
-    if enteredCode == full_code:
+    if int(enteredCode) == full_code:
         time.sleep(1)
         clr_scr()
         print("Terminal digits turn green, and with a loud beep you hear the heavy door unlock. You carfully open the door and peek through the dimly lit hallway.")
