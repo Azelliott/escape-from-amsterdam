@@ -10,10 +10,11 @@ The story follows main protagonist who wakes up in what looks like a hotel room 
 Find the snippets of code hidden around the room to get out of the room until door is locked...Forever.
 
 ## Features
-
 * ASCII art
+![Start game](/screenshots/start_game.png)
 
 * Multiple items to investigate
+![Game menu](/screenshots/game_menu.png)
 
 * Replayability is achieved through randomization of code locations
 
@@ -50,9 +51,15 @@ Find the snippets of code hidden around the room to get out of the room until do
 ### Local
 
 To locally deploy the project clone the Git repository
-> git clone https://github.com/Azelliott/escape-from-amsterdam.git
+>git clone https://github.com/Azelliott/escape-from-amsterdam.git
 
 ### Heroku
 
+You can visit the live application on Heroku
+> https://escape-from-amsterdam.herokuapp.com
+
 ## Credits
 
+I got the inspiration from great write-up by Mike Wolfe, you can check it out here:
+
+>https://python.plainenglish.io/building-an-old-school-text-based-game-with-python-efcc33d25a42
