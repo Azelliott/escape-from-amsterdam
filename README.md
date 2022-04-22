@@ -10,10 +10,17 @@ The story follows main protagonist who wakes up in what looks like a hotel room 
 Find the snippets of code hidden around the room to get out of the room until door is locked...Forever.
 
 ## Features
+
 * ASCII art
+
+<br/>
+
 ![Start game](/screenshots/start_game.png)
 
 * Multiple items to investigate
+
+<br/>
+
 ![Game menu](/screenshots/game_menu.png)
 
 * Replayability is achieved through randomization of code locations
