@@ -1,31 +1,58 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Escape from Amsterdam
 
-Welcome Azelliott,
+Escape from Amsterdam is a small retro text based advanture game that draws 
+inspiration from games like Zork and Slouching Towards Bedlam.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Because best 3D engine is your own imagination :)
 
-## Reminders
+The story follows main protagonist who wakes up in what looks like a hotel room in Amsterdam. His memory is hazy, but the rules are clear.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Find the snippets of code hidden around the room to get out of the room until door is locked...Forever.
 
-## Creating the Heroku app
+## Features
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+* ASCII art
 
-1. `heroku/python`
-2. `heroku/nodejs`
+* Multiple items to investigate
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+* Replayability is achieved through randomization of code locations
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+<br/>
 
-Connect your GitHub repository and deploy as normal.
+## Testing
 
-## Constraints
+* User input validations
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+    * Input length
+    * Is input a (valid) number
+    * Correct code sequence
 
------
-Happy coding!
+<br/>
+
+* PEP8 
+
+    * `Run.py` - Fully passes PEP8 validation from online validator http://pep8online.com/
+
+    * `Items.py` - Some lines are longer to keep the proper text formating in game
+
+<br/>
+
+* Tested on Windows 10 and Fedora 35
+
+### Requirements
+* Python version 3.10+ is required because of the use of new match case statement
+* .gitpod.dockerfile is set to correct version
+
+<br/>
+
+## Deployment
+
+### Local
+
+To locally deploy the project clone the Git repository
+> git clone https://github.com/Azelliott/escape-from-amsterdam.git
+
+### Heroku
+
+## Credits
+
